@@ -1,3 +1,5 @@
+#include "application.h"
+#line 1 "/Users/raventt/MBP_Projects/arduino/maxPhoton5/src/maxPhoton5.ino"
 /*
  * Project maxPhoton4
  * Description: Interface Maxbotix serial sensor to Particle Photon or Arduino compatible
@@ -5,15 +7,13 @@
  * Date: May 22, 2019
  */
 
-/* 
-* With thanks to:
-* https://github.com/nimasaj/Maxbotix_Ultrasonic/blob/master/Examples/Serial_read.ino
-* for the unwitting help in seeing while as a replacement for a 'for' loop
-*/
-
 // Using hardware UART on Photon, Electron, Fio
 // Maxbotix sensor with RS232 conversion to TTL with MAX3232
 
+void setup();
+void loop();
+uint16_t maxRead();
+#line 11 "/Users/raventt/MBP_Projects/arduino/maxPhoton5/src/maxPhoton5.ino"
 void setup()
 {
   Serial.begin(57600);
@@ -33,6 +33,7 @@ void setup()
 
 void loop()
 {
+  delay(100);
   uint16_t range = maxRead();
   Serial.print("Range: ");
   Serial.println(range);

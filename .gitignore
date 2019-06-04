@@ -12,6 +12,8 @@
 *.lo
 *.o
 *.obj
+#compiled directory
+target
 
 # Precompiled Headers
 *.gch
